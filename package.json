@@ -1,0 +1,39 @@
+{
+  "name": "largetools",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup"
+  },
+  "tsup": {
+    "entry": ["index.ts", "browser.ts" , "common.ts"],
+    "splitting": false,
+    "sourcemap": false,
+    "format": "esm",
+    "clean": true
+  },
+  "exports":{
+    ".": {
+      "common": {
+        "default": "dist/common.js"
+      },
+      "browser": {
+        "default": "dist/browser.js"
+      },
+      "default": {
+        "default": "dist/index.js"
+      }
+    }
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.6.3"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5"
+  }
+}
